@@ -216,6 +216,8 @@ class Bluetooth:
             disconnected_callback=self._disconnect_handler,
         )
 
+        self._btle_client._backend._mtu_size = 256
+
         try:
             await self._btle_client.connect()
 
